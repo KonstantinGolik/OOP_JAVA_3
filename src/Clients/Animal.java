@@ -35,17 +35,17 @@ public class Animal {
         System.out.println(getType() + " Eat");
     }
 
-    public void toGo(){
-        System.out.println(getType() + " ToGo");
-    }
-
-    public void fly(){
-        System.out.println(getType() + " Fly");
-    }
-
-    public void swim(){
-        System.out.println(getType() + " Swim");
-    }
+//    public void toGo(){
+//        System.out.println(getType() + " ToGo");
+//    }
+//
+//    public void fly(){
+//        System.out.println(getType() + " Fly");
+//    }
+//
+//    public void swim(){
+//        System.out.println(getType() + " Swim");
+//    }
 
     private void play(){
         System.out.println(getType() + " Play");
