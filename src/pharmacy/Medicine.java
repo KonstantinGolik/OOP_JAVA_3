@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Medicine implements Iterator<MedicineComponent>, Comparable {
+public class Medicine implements Iterator<MedicineComponent>, Comparable<Medicine> {
+    private String name;
     private List<MedicineComponent> components;
     private int index;
-    public Medicine(){
-    this.components = new ArrayList<>();
-    this.index = 0;
+
+    public Medicine(String name){
+        this.name = name;
+        this.components = new ArrayList<>();
+        this.index = 0;
+
     }
     public Medicine addComponent(MedicineComponent component){
         components.add(component);
@@ -17,23 +21,24 @@ public class Medicine implements Iterator<MedicineComponent>, Comparable {
     }
     @Override
     public boolean hasNext() {
-//        return components.iterator().hasNext();
+// return components.iterator().hasNext();
         return index < components.size();
     }
 
     @Override
     public MedicineComponent next() {
-//        return components.iterator().next();
+// return components.iterator().next();
         return components.get(index++);
     }
 
     @Override
     public String toString() {
-        return "Medicine: " + components.toString();
+        return "Препарат " + name;
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Medicine o) {
+        return components.size() - o.components.size();
+//        return name.compareTo(o.name);
     }
 }
